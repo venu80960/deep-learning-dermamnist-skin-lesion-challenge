@@ -1,0 +1,13 @@
+{
+  "variant": "cw_resnet18_lr3e4",
+  "seed": 0,
+  "balanced_accuracy": 0.6096386444893368,
+  "macro_F1": 0.5358778135813871,
+  "sens_actinic keratoses": 0.6060606060606061,
+  "sens_basal cell carcinoma": 0.5631067961165048,
+  "sens_benign keratosis": 0.41818181818181815,
+  "sens_dermatofibroma": 0.5652173913043478,
+  "sens_melanoma": 0.5919282511210763,
+  "sens_melanocytic nevi": 0.7643549589858315,
+  "sens_vascular lesions": 0.7586206896551724
+}
