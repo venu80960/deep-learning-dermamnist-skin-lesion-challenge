@@ -1,14 +1,10 @@
-# virtual environment, downloaded data and logs: recreated from requirements.txt / on first run
 .venv/
 data/
 runs/
 __pycache__/
 .ipynb_checkpoints/
-
-# cached per-model predictions (rebuilt by experiments.py)
 results/preds/
-
-# editor / OS files
 .vscode/
 .DS_Store
 Thumbs.db
+.gradio/
