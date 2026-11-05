@@ -4,7 +4,7 @@ Course project "Challenge – Skin lesion classification" (Deep Learning, SRH, l
 Task: classify 28x28 colour dermatoscopy images into 7 classes (DermaMNIST, MedMNIST v2). Main metric:
 **balanced accuracy** (mean sensitivity over the 7 classes) on the official test split.
 
-**Team:** _<team Group1 and members:Ankita phande Venu Kamatam Ethan>_
+**Team:** Group 1 - Ankita Phande, Venu Kamatam, Ye Min
 
 ## Result
 
@@ -61,6 +61,10 @@ Raw per-seed numbers: `results/metrics_colab_gpu_5seeds.csv`.
 | `compare.py` | pairwise bootstrap comparison from the cached predictions (no retraining) |
 | `final_model.py` | trains the chosen variant, picks the best seed on val, exports and checks `model.pt`, evaluates once on test with `--test` |
 | `model.pt` | final TorchScript model |
+| `app.py` | Gradio app: upload an image, get the top-3 classes with probabilities, an occlusion map and a short note |
+| `app_colab.ipynb` | one-click notebook that starts the app in Colab (public link) |
+| `make_examples.py`, `examples/` | example images for the app (one validation image per class) |
+| `requirements_app.txt` | the few packages the app needs |
 | `results/` | metrics of the runs, final test metrics, confusion matrix |
 | `day4_challenge_starter*.ipynb` | course starter notebook (baseline) |
 | `requirements.txt`, `requirements-lock.txt` | direct dependencies / full pinned environment (Python 3.12) |
@@ -95,10 +99,25 @@ TensorBoard (`runs/<variant>/seed<k>`: training loss and validation balanced acc
 * Doerrich, Di Salvo, Brockmann, Ledig, Rethinking model prototyping through the MedMNIST+ dataset collection,
   Scientific Reports 15, 7669 (2025), doi:10.1038/s41598-025-92156-9.
 
-## AI use statement (draft, to be confirmed by the author)
+## AI use statement
 Claude (Anthropic) was used as a tutor and coding assistant: it explained the task and the handout, proposed the
 experimental design, drafted `experiments.py`, `compare.py` and `final_model.py`, and helped interpret results.
 
 
 ## App
-_Gradio app: to be added._
+The app (`app.py`, Gradio) takes an uploaded skin lesion image and shows the top-3 classes with probabilities,
+a map of the image regions that matter most for the top class (occlusion sensitivity), and a short note with the
+model's test sensitivity for that class. It is a student project, not a medical device.
+
+**Run it in Colab (one click):** open
+[`app_colab.ipynb`](https://colab.research.google.com/github/venu80960/deep-learning-dermamnist-skin-lesion-challenge/blob/main/app_colab.ipynb)
+and choose *Runtime > Run all*. After about a minute a public `gradio.live` link appears. A CPU runtime is enough.
+If that link redirects to GitHub, open Colab, choose *File > Open notebook > GitHub*, paste the repository URL and
+select `app_colab.ipynb`.
+
+**Run it locally:**
+```
+pip install -r requirements.txt
+python app.py        # then open http://127.0.0.1:7860
+```
+(Hugging Face Spaces was not used: Gradio Spaces need a paid plan there; the handout allows Colab.)
