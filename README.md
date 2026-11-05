@@ -4,7 +4,7 @@ Course project "Challenge – Skin lesion classification" (Deep Learning, SRH, l
 Task: classify 28x28 colour dermatoscopy images into 7 classes (DermaMNIST, MedMNIST v2). Main metric:
 **balanced accuracy** (mean sensitivity over the 7 classes) on the official test split.
 
-**Team:** _<team name and members: fill in>_
+**Team:** _<team Group1 and members:Ankita phande Venu Kamatam Ethan>_
 
 ## Result
 
@@ -98,8 +98,7 @@ TensorBoard (`runs/<variant>/seed<k>`: training loss and validation balanced acc
 ## AI use statement (draft, to be confirmed by the author)
 Claude (Anthropic) was used as a tutor and coding assistant: it explained the task and the handout, proposed the
 experimental design, drafted `experiments.py`, `compare.py` and `final_model.py`, and helped interpret results.
-All code was run, checked and the results were produced by the author on the author's own laptop and on Google
-Colab; the author is responsible for being able to explain every part of the code.
+
 
 ## App
 _Gradio app: to be added._
