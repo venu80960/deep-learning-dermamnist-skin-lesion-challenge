@@ -8,3 +8,4 @@ results/preds/
 .DS_Store
 Thumbs.db
 .gradio/
+deep-learning-dermamnist-skin-lesion-challenge/
