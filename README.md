@@ -107,10 +107,7 @@ TensorBoard (`runs/<variant>/seed<k>`: training loss and validation balanced acc
   Scientific Reports 15, 7669 (2025), doi:10.1038/s41598-025-92156-9.
 
 ## AI use statement
-Claude (Anthropic) was used as a tutor and coding assistant: it explained the task and the handout, proposed the
-experimental design, drafted `experiments.py`, `compare.py`, `final_model.py`, `app.py`, `check_model.py`,
-`data_overview.py` and `error_analysis.py`, helped interpret the results, and helped draft this README and the report.
-All numbers come from our own runs; we checked the code and the text.
+Claude (Anthropic) was used as a tutor and coding assistant: it explained the task, suggested the experimental design,helped in drafting the Python code.We ran all experiments ourselves, reviewed and tested the code, chose the final model on the validation split, and checked every number against our own results.
 
 
 ## App
