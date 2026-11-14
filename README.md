@@ -4,7 +4,7 @@ Course project "Challenge – Skin lesion classification" (Deep Learning, SRH, l
 Task: classify 28x28 colour dermatoscopy images into 7 classes (DermaMNIST, MedMNIST v2). Main metric:
 **balanced accuracy** (mean sensitivity over the 7 classes) on the official test split.
 
-**Team:** Group 1 - Ankita Phande, Venu Kamatam, Ye Min
+**Team:** Group 1 - Ankita Phadte, Venu Kamatam, Ye Min Swe
 
 ## Result
 
@@ -65,7 +65,12 @@ Raw per-seed numbers: `results/metrics_colab_gpu_5seeds.csv`.
 | `app_colab.ipynb` | one-click notebook that starts the app in Colab (public link) |
 | `make_examples.py`, `examples/` | example images for the app (one validation image per class) |
 | `requirements_app.txt` | the few packages the app needs |
-| `results/` | metrics of the runs, final test metrics, confusion matrix |
+| `check_model.py` | loads `model.pt`, checks input/output shapes and prints the validation balanced accuracy and macro-F1 (`ALL CHECKS PASSED`) |
+| `data_overview.py` | class counts and one example image per class (`results/data_overview.png`) |
+| `error_analysis.py` | per-class validation sensitivity and the validation confusion matrices (`results/per_class_val_sensitivity.*`, `results/confusion_val_baseline_vs_final.png`) |
+| `results/` | metrics of the runs, final test metrics, confusion matrices, per-class sensitivity, data overview, TensorBoard screenshot (`tensorboard_curve.png`) |
+| `runs_clean/` | TensorBoard logs (seed 0) of the four runs shown in the report's Fig. 2 |
+| `report.pdf`, `poster_v2.pdf` | final report (IEEE format) and poster |
 | `day4_challenge_starter*.ipynb` | course starter notebook (baseline) |
 | `requirements.txt`, `requirements-lock.txt` | direct dependencies / full pinned environment (Python 3.12) |
 
@@ -90,6 +95,8 @@ across seeds and runs), not identical weights. The exported `model.pt` is the fi
 
 ## Experiment tracking
 TensorBoard (`runs/<variant>/seed<k>`: training loss and validation balanced accuracy per epoch).
+`runs/` is not in the repository (it is large); the seed-0 logs of the four runs in the report's Fig. 2 are in
+`runs_clean/` (`tensorboard --logdir runs_clean`), and the screenshot is `results/tensorboard_curve.png`.
 
 ## Sources
 * Yang et al., MedMNIST v2, Scientific Data 2023.
@@ -101,7 +108,9 @@ TensorBoard (`runs/<variant>/seed<k>`: training loss and validation balanced acc
 
 ## AI use statement
 Claude (Anthropic) was used as a tutor and coding assistant: it explained the task and the handout, proposed the
-experimental design, drafted `experiments.py`, `compare.py` and `final_model.py`, and helped interpret results.
+experimental design, drafted `experiments.py`, `compare.py`, `final_model.py`, `app.py`, `check_model.py`,
+`data_overview.py` and `error_analysis.py`, helped interpret the results, and helped draft this README and the report.
+All numbers come from our own runs; we checked the code and the text.
 
 
 ## App
